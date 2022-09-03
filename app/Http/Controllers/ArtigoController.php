@@ -16,7 +16,7 @@ class ArtigoController extends Controller
      */
     public function index()
     {
-        $artigos = Artigo::paginate(15);
+        $artigos = Artigo::orderBy('created_at', 'desc')->paginate(5);
         return ArtigoResource::collection($artigos);
     }
 
